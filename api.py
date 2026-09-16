@@ -45,7 +45,7 @@ def agregar_whitelist(payload: dict):
     if not nuevo_numero:
         return {"status": "error", "mensaje": "Número inválido"}
     
-numeros = cargar_whitelist()
+    numeros = cargar_whitelist()
     if nuevo_numero not in numeros:
         with open(WHITELIST_FILE, "a", encoding="utf-8") as f:
             f.write(f"{nuevo_numero}\n")
